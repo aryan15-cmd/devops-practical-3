@@ -11,19 +11,19 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                bat 'python app.py'
+                bat '"C:\\Users\\aryan\\anaconda3\\python.exe" app.py'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t devops-practical-3 .'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t devops-practical-3 .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker run --rm devops-practical-3'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" run --rm devops-practical-3'
             }
         }
     }
